@@ -1,0 +1,111 @@
+doctype 5
+html
+	head
+		title= locals.title
+		meta(name = "viewport", content = "initial-scale=1.0, user-scalable=no")
+		link(rel = 'stylesheet', href = '/stylesheets/header.css')
+		style(type = "text/css")
+			html{height: 100%}
+			body{height: 100%; margin: 0; padding: 0}
+			#map_canvas{height:100%; position:absolute}
+		script(type = "text/javascript", src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDyMh31mXtuz-Gfw6hB4UjvURwwEiIRTHs&sensor=false")
+		script(type = "text/javascript", src = "/javascripts/infobox_packed.js")
+		script(type = "text/javascript")
+			function initialize(){
+				var mapOptions = {
+					center: new google.maps.LatLng(41.0128,28.9744),
+					zoom: 3,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+				var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+				var theBoxStyle = {background:"white",
+									color:"black", 
+									width:"200px", 
+									border:"5px solid black",
+									padding:"5px",
+									fontFamily:"Helvetica Neue, Helvetica, sans-serif",
+									fontWeight:"bold",
+									borderRadius:"5px",
+									opacity:"0.7"}
+				var berlin = new google.maps.Marker({position:new google.maps.LatLng(52.5166667,13.4), map:map, title: "Berlin", icon:'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=G|FFFFFF|800000'});
+				var berlinInfo = new InfoBox({content: "Berlin - 2008<p>Attended BBIS (click for site)</p>", boxStyle:theBoxStyle});
+				google.maps.event.addListener(berlin, 'mouseover', function() {
+					berlinInfo.open(map,berlin);
+				});
+				google.maps.event.addListener(berlin, 'mouseout', function() {
+					berlinInfo.close(map,berlin);
+				});
+				google.maps.event.addListener(berlin, 'click', function() {
+					window.location = "http://www.bbis.de/";
+				});
+				var fukuoka = new google.maps.Marker({position:new google.maps.LatLng(33.5858,130.4033), map:map, title: "Fukuoka", icon:'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=A|FFFFFF|800000'});
+				var fukuokaInfo = new InfoBox({content: "Fukuoka - 1992", boxStyle:theBoxStyle});
+				google.maps.event.addListener(fukuoka, 'mouseover', function() {
+					fukuokaInfo.open(map,fukuoka);
+				});
+				google.maps.event.addListener(fukuoka, 'mouseout', function() {
+					fukuokaInfo.close(map,fukuoka);
+				});
+				var paris = new google.maps.Marker({position:new google.maps.LatLng(48.8742,2.3470), map:map, title: "Paris", icon:'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=C|FFFFFF|800000'});
+				var parisInfo = new InfoBox({content: "Paris - 1995", boxStyle:theBoxStyle});
+				google.maps.event.addListener(paris, 'mouseover', function() {
+					parisInfo.open(map,paris);
+				});
+				google.maps.event.addListener(paris, 'mouseout', function() {
+					parisInfo.close(map,paris);
+				});
+				var dc = new google.maps.Marker({position:new google.maps.LatLng(38.8900,282.9700), map:map, title: "Washington D.C.", icon:'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=D|FFFFFF|800000'});
+				var dcInfo = new InfoBox({content: "Washington D.C. - 1999,2006", boxStyle:theBoxStyle});
+				google.maps.event.addListener(dc, 'mouseover', function() {
+					dcInfo.open(map,dc);
+				});
+				google.maps.event.addListener(dc, 'mouseout', function() {
+					dcInfo.close(map,dc);
+				});
+				var berne = new google.maps.Marker({position:new google.maps.LatLng(46.9500,7.4458), map:map, title: "Berne", icon:'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=F|FFFFFF|800000'});
+				var bernInfo = new InfoBox({content: "Berne - 2007<p>Attended ISB (click for site)</p>", boxStyle:theBoxStyle});
+				google.maps.event.addListener(berne, 'mouseover', function() {
+					bernInfo.open(map,berne);
+				});
+				google.maps.event.addListener(berne, 'mouseout', function() {
+					bernInfo.close(map,berne);
+				});
+				google.maps.event.addListener(berne, 'click', function() {
+					window.location = "http://www.isberne.ch/";
+				});
+				var branford = new google.maps.Marker({position:new google.maps.LatLng(41.2795,281.1849), map:map, title: "Branford", icon:'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=B|FFFFFF|800000'});
+				var branfordInfo = new InfoBox({content: "Branford - 1994", boxStyle:theBoxStyle});
+				google.maps.event.addListener(branford, 'mouseover', function() {
+					branfordInfo.open(map,branford);
+				});
+				google.maps.event.addListener(branford, 'mouseout', function() {
+					branfordInfo.close(map,branford);
+				});
+				var annArbor = new google.maps.Marker({position:new google.maps.LatLng(42.2708,276.2736), map:map, title: "Ann Arbor", icon:'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=H|FFFFFF|800000'});
+				var annArborInfo = new InfoBox({content: "Ann Arbor - 2010<p>Attending U of M (click for site)</p>", boxStyle:theBoxStyle});
+				google.maps.event.addListener(annArbor, 'mouseover', function() {
+					annArborInfo.open(map,annArbor);
+				});
+				google.maps.event.addListener(annArbor, 'mouseout', function() {
+					annArborInfo.close(map,annArbor);
+				});
+				google.maps.event.addListener(annArbor, 'click', function() {
+					window.location = "http://www.umich.edu"
+				});
+				var tokyo = new google.maps.Marker({position:new google.maps.LatLng(35.6833,139.7667), map:map, title: "Tokyo", icon:'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=E|FFFFFF|800000'});
+				var tokyoInfo = new InfoBox({content: "Tokyo - 2001", boxStyle:theBoxStyle});
+				google.maps.event.addListener(tokyo, 'mouseover', function() {
+					tokyoInfo.open(map,tokyo);
+				});
+				google.maps.event.addListener(tokyo, 'mouseout', function() {
+					tokyoInfo.close(map,tokyo);
+				});
+			}
+	body(onload = "initialize()")
+		#nick 
+			h1 Nicholas Otto | Life Map
+			a(href = "/")
+				span#ninjaLink
+		#map_canvas(style = "width:100%; height:100%; z-index: 0")
+		
+		

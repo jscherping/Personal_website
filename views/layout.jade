@@ -1,0 +1,20 @@
+doctype 5
+html
+	head
+		title= locals.title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		script(type = 'text/javascript', src = '/javascripts/jquery_compressed.js')
+		script(type = 'text/javascript', src = '/javascripts/animations.js')
+		meta(name="viewport", content="initial-scale=1.0, user-scalable=no")
+		script(type="text/javascript", src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyMh31mXtuz-Gfw6hB4UjvURwwEiIRTHs&sensor=false")
+		script(type="text/javascript")
+			function initialize() {
+				var mapOptions = {
+					center: new google.maps.LatLng(-34.397, 150.644),
+					zoom: 8,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+				var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+			}
+	body(background = '/images/berlin2_cropped.jpg')
+		block content

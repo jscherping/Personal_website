@@ -1,0 +1,17 @@
+{
+  "name": "nwkotto",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.0.5",
+    "jade": "*",
+    "stylus": "*"
+  },
+  "engines": {
+    "node": ">=0.8",
+    "npm": ">=1.1"
+  }
+}

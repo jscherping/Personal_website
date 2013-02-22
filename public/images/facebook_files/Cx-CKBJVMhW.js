@@ -1,0 +1,5 @@
+/*1358138720,178142493*/
+
+if (self.CavalryLogger) { CavalryLogger.start_js(["M1R6l"]); }
+
+__d("SidebarTickerResizer",["Arbiter","AsyncRequest","ChatSidebar","SimpleDrag","$"],function(a,b,c,d,e,f){var g=b('Arbiter'),h=b('AsyncRequest'),i=b('ChatSidebar'),j=b('SimpleDrag'),k=b('$'),l=1e-07;function m(n){var o=k('pagelet_ticker'),p=o.parentNode,q=this._saveResizedState.bind(this),r,s,t,u=function(x,event){r=event.clientY;s=o.offsetHeight;t=p.offsetHeight;},v=function(x,event){var y=s+(event.clientY-r),z=100-(((t-y)/t)*100);z=Math.max(l,Math.min(90,z));o.style.height=z+'%';if(x=='end'){q(z);g.inform('Ticker/resized');}i.resize();},w=new j(n);w.subscribe('start',u);w.subscribe(['update','end'],v);}m.prototype._saveResizedState=function(n){new h('/ajax/feed/ticker/resize').setData({height:''+n}).setMethod('POST').send();};e.exports=m;});

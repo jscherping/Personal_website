@@ -1,0 +1,53 @@
+extends layout
+
+block content
+	#header
+		h1 Nicholas Otto | 
+			span#titles Programming
+		p Updates:
+			|Check out a new website I've been working on 
+			a(style = "color:green", target = "_blank", href = "http://www.tellmewhatineed.com") here
+			| 
+			|(still a work in progress)
+	#wrapper
+		#nav
+			#navTop 
+				span#i hover
+				a(href = "/map")
+					span#ninjaLink
+			#navMiddle 
+				span#s hover
+				a(href = "/resume.pdf")
+					span#ninjaLink
+			#navBottom 
+				span#f hover
+		#contentTop.stuff
+			#headRed.head Story
+			|I code; I write music; I travel.  I was born in Japan, 1992, and moved through 3 continents and 6 countries over
+			|18 years.  After graduating from high school in Berlin with an IB diploma,
+			|I flew back to the States in 2010 and started college at the University of
+			|Michigan.  Three years later, and I'm approaching graduation.
+		#contentMiddle.stuff 
+			#headOrange.head Stats
+			ul
+				li Junior at the University of Michigan, majoring in computer science and minoring in economics
+				li Employed at PCE Systems, an electronic medical record company based out of Farmington Hills, MI, since September 2012
+				li Has attended 5 hack-a-thons and counting, as part of Michigan Hackers.
+				li Languages: C/C++ (3+ semesters), SQL (1 semester and at work), Javascript & jQuery & Node.js (hack-a-thons), 
+					|Python (1 semester), VB (at work), HTML & CSS (yeah, I'm just padding this out at this point)
+			#headOrange.head Enter your phone # to receive an SMS summary of these stats:
+				form(style = "display:inline-block", method = "post", action = "/")
+					input#numBox(type = "text", name = "number", MAXLENGTH = 10)
+					input#submit(type = "submit")
+		#contentBottom.stuff
+			#headGreen.head Get()
+			a(href = "https://www.facebook.com/nwkotto")
+				img.logo(src = "/images/facebook.png")
+			a(href = "mailto:nwkotto@umich.edu")
+				img.logo(src = "/images/gmail.png")
+			a(href = "https://github.com/notto")
+				img.logo#blacktocat(src = "/images/github.png")
+			a(href = "https://soundcloud.com/nwkotto")
+				img.logo(src = "/images/soundcloud.png")
+			a(href = "http://www.youtube.com/user/nicholasottomusic")
+				img.logo(src = "/images/youtube.png")

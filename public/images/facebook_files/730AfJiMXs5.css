@@ -1,0 +1,8 @@
+/*1358138718,178142493*/
+
+.fbChatSidebar .fbChatTypeaheadView{bottom:0;position:absolute;top:auto;width:100%}
+.fbChatSidebar .fbChatTypeaheadView li{padding-left:2px}
+.fbChatSidebar .fbChatTypeaheadView li.selected{background-color:#e0e4ee}
+._6nw .fbChatSidebar .fbChatTypeaheadView li.selected{background-color:#d8d9dd}
+
+#bootloader_m8xgZ { height: 42px; }
